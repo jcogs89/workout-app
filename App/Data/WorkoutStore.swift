@@ -157,6 +157,8 @@ final class WorkoutStore: ObservableObject {
     }
 
     func observeAutosave() {
+        Publishers.CombineLatest4($workouts, $gymLocations, $workoutTypes, $exercises)
+            .combineLatest($timerPresets)
         $workouts
             .combineLatest($gymLocations, $workoutTypes, $exercises, $timerPresets)
             .debounce(for: .seconds(1), scheduler: DispatchQueue.main)
