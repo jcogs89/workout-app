@@ -75,7 +75,7 @@ struct MetricsView: View {
     private var averageDurationCard: some View {
         VStack(alignment: .leading, spacing: 8) {
             Label("Average duration", systemImage: "clock.arrow.circlepath")
-            Text("\(store.averageDurationMinutes(), format: .number.precision(.fractionLength(0...1))) minutes")
+            Text("\(store.averageDurationMinutes(), format: .number.precision(.fractionLength(0..1))) minutes")
                 .font(.title3.bold())
         }
         .frame(maxWidth: .infinity, alignment: .leading)
